@@ -24,7 +24,9 @@ const getPokemonImage = async (url) => {
   now its mapping throug the filtered parameters i need to use await because its fetching images from another api call to match the name of the pokemons in the list
   it inserting the provided html in the container.
 */
-async function render(query = ''){
+
+
+export default async function render(query = ''){
     const data = await getPokemonList()
 
     const cleaner = query.trim().toLocaleLowerCase()
@@ -39,14 +41,18 @@ async function render(query = ''){
         <div class="img-wrapper">
             <img src="${imageUrl}">
         </div>
-        <a href="index.html" class="info-link">info</a>
+        <a href="index.html" class = "info-link" id = ${pokemon.name}>Info</a>
         </div>`)
     });
+
 }
+
 //the search listener updates the list on keyUp calls the render function sends the users input as parameter to render function
 search.addEventListener('keyup',()=>{
     render(search.value)
 })
 
+
 render()
+
 

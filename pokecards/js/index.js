@@ -1,3 +1,4 @@
+import render from "./indextwo.js"
 
  const variables = ['.name', '.pokemon', '.previous', '.ul-list', '.search', 'form', '.hp']
  const selected = variables.map(value => document.querySelector(value))
