@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7cc6ea881f.js" crossorigin="anonymous"></script>   
+    <script src="js/index.js" defer type="module"></script>
+
+    <title>Cards</title>
+</head>
+<body>
+    <header class="flex">
+        <nav class="flex">
+            <a href="landingPage.html"><h1 class="title">PokeCards</h1></a>
+            <form>
+                <div class="search-container flex">
+                    <input type="text" class="search" value="" placeholder="search pokemon">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+
+        </nav>
+        
+    </header>
+    <div class="pokeCard">
+        <h1 class="name"></h1>
+        <div class="img-container flex">
+            <img class="pokemon">
+        </div>
+        <div class="abilites-wrapper">
+            <h3>Abilities</h3>
+            <div class="abilities-container">
+                <ul class="ul-list">
+
+                </ul> 
+            </div> 
+        </div>
+    </div>
+    
+    <div class="btn-container flex">
+        <button class="previous"><i class="fa-solid fa-shuffle"></i></button>
+    </div>
+    <footer class="flex">
+        <p>API from: https://pokeapi.co/</p>
+    </footer>
+</body>
+</html>
