@@ -29,11 +29,11 @@ body{
     flex-direction: column;
 }
 header{
-    background: red;
+    background:  #e4000f;
     width: 100%;
 }
 .title{
-    color: rgb(16, 16, 80);
+    color: #3B4CCA;
 }
 .search{
     padding: 5px 15px;
@@ -68,7 +68,7 @@ nav{
 
 .pokemon-business-card{
     padding: 5px;
-    background: yellow;
+    background: #FFDE00;
     color: black;
     text-align: center;
     border-radius: 5px;
@@ -83,7 +83,7 @@ img{
 }
 .info-link{
     padding: 5px 30px;
-    background: blue;
+    background: #3B4CCA;
     text-decoration: none;
     color: white;
     border-radius: 5px;

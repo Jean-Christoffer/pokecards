@@ -1,4 +1,4 @@
-import render from "./indextwo.js"
+
 
  const variables = ['.name', '.pokemon', '.previous', '.ul-list', '.search', 'form', '.hp']
  const selected = variables.map(value => document.querySelector(value))
@@ -23,6 +23,7 @@ randomPokemon.addEventListener('click', ()=>{
     updatePokemon()
     
 })
+
 
 async function pokeDex() {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${someValue ?? '1'}`)

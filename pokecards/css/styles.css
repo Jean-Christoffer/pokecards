@@ -25,7 +25,7 @@ img{
     border-radius: 5px;   
 }
 header{
-    background: red;
+    background:#e4000f;
 }
 
 nav{
@@ -160,7 +160,7 @@ button:hover {
 
 
 .title{
-    color: rgb(16, 16, 80);
+    color: #3B4CCA;
 }
 .search-container{
     align-items: center;
