@@ -1,7 +1,7 @@
 
- const variables = ['.name', '.pokemon', '.previous', '.ul-list', '.search', 'form']
+ const variables = ['.name', '.pokemon', '.previous', '.ul-list', '.search', 'form', '.hp']
  const selected = variables.map(value => document.querySelector(value))
- const [pokeName, pokemon, randomPokemon, ulList, search,  form] = selected
+ const [pokeName, pokemon, randomPokemon, ulList, search,  form, hp] = selected
  
 let sum = 150
 let pokeMonName = 'charizard'
@@ -26,6 +26,7 @@ randomPokemon.addEventListener('click', ()=>{
 async function pokeDex() {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${someValue ?? '1'}`)
     const data = await response.json()
+    console.log(data.stats)
     return data      
 }
 
@@ -35,6 +36,10 @@ function updateUI(data) {
     pokemon.src = data.sprites.other.dream_world.front_default
     pokeName.textContent = data.name 
 
+    hp.textContent = `HP: ${data.stats.filter(stat => stat.stat.name.includes('hp'))
+    .map(stat => stat.base_stat)}`
+
+
     data.abilities.forEach(ability => {
         const p = document.createElement('li')
         const upperCased = ability.ability.name.charAt(0).toUpperCase()
@@ -43,6 +48,8 @@ function updateUI(data) {
         p.classList.add = 'ability-info'
         ulList.appendChild(p)
     });
+
+
 }
 
 
