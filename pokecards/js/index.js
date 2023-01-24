@@ -8,6 +8,13 @@ let sum = 150
 let pokeMonName = 'charizard'
 let someValue = 1
 
+async function pokeDex() {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${someValue ?? '1'}`)
+    const data = await response.json()
+    console.log(data.stats)
+    return data      
+}
+
 
 form.addEventListener('submit', (e)=>{
     e.preventDefault()
@@ -16,21 +23,13 @@ form.addEventListener('submit', (e)=>{
 });
 
 randomPokemon.addEventListener('click', ()=>{
-    sum = Math.floor(Math.random() * 301)
+    sum = Math.floor(Math.random() * 501)
     sum <= 0 ? sum = 1 : sum
     someValue = sum
     console.log(sum)
     updatePokemon()
     
 })
-
-
-async function pokeDex() {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${someValue ?? '1'}`)
-    const data = await response.json()
-    console.log(data.stats)
-    return data      
-}
 
 
 function updateUI(data) {
@@ -60,7 +59,7 @@ async function updatePokemon(){
         const data = await pokeDex()
         updateUI(data) 
     } catch (error) {
-        alert('API issues updatePokemon')
+        alert('Cant find pokemon')
     }
 }
 

@@ -63,7 +63,7 @@ nav{
     flex-wrap: wrap;
     gap:10px;
     justify-content: center;
-    height: 100vh;
+    max-height: 100vh;
     overflow-y: scroll;
     border-top: 5px solid #3B4CCA;
     border-bottom:5px solid #3B4CCA; ;
@@ -82,6 +82,7 @@ img{
 }
 .img-wrapper{
     margin: auto;
+    width: 100px;
  
 }
 .info-link{
@@ -90,4 +91,5 @@ img{
     text-decoration: none;
     color: white;
     border-radius: 5px;
+ 
 }
