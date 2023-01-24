@@ -1,4 +1,4 @@
-
+import FetchWrapper from "./components/fetchHelper.js"
 
  const variables = ['.name', '.pokemon', '.previous', '.ul-list', '.search', 'form', '.hp']
  const selected = variables.map(value => document.querySelector(value))
@@ -16,7 +16,7 @@ form.addEventListener('submit', (e)=>{
 });
 
 randomPokemon.addEventListener('click', ()=>{
-    sum = Math.floor(Math.random() * 501)
+    sum = Math.floor(Math.random() * 301)
     sum <= 0 ? sum = 1 : sum
     someValue = sum
     console.log(sum)
@@ -65,3 +65,8 @@ async function updatePokemon(){
 }
 
 updatePokemon()
+
+
+
+
+

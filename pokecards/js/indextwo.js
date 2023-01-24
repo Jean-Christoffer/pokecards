@@ -5,7 +5,7 @@ const container = document.querySelector('.pokemon-container')
 //fetching pokemon api data with a endpoint which contains a list with all the pokemon names and their url
 const getPokemonList = async ()=>{
         const API = new FetchWrapper('https://pokeapi.co/api/v2/')
-        const data = await API.get(`pokemon?limit=10&offset=0`)
+        const data = await API.get(`pokemon?limit=300&offset=0`)
         return data
 }
 
