@@ -17,6 +17,7 @@ html,body{
 body{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 img{
     width: 100%;
@@ -26,6 +27,7 @@ img{
 }
 header{
     background:#e4000f;
+    width: 100%;
 }
 
 nav{
@@ -58,7 +60,7 @@ h1{
  flex-direction: column;
  justify-content: center;
  align-items: center;
- margin: 100px auto;
+ margin: 40px auto;
  width: 320px;
  border: 5px solid #ffcb05;
  border-radius: 10px;
@@ -67,7 +69,6 @@ h1{
 }
 .btn-container{
     justify-content: center;
-    margin-top: 8px;
    
 }
 
@@ -174,6 +175,10 @@ button:hover {
 
 .ul-list{
 margin-left: 20px;
+}
+
+form{
+    margin-top: 20px;
 }
 footer{
     margin-top: auto;

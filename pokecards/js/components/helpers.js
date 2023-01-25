@@ -7,3 +7,10 @@ export default class FetchWrapper {
         return response.json()
     }
 }
+
+function capitalize(word){
+    let firstLetter = word.charAt(0).toUpperCase()
+    let restOfWord = word.substring(1)
+    return firstLetter + restOfWord
+}
+export {capitalize}

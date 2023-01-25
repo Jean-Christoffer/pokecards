@@ -10,11 +10,15 @@ html{
     color: white;
 }
 h1{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Bangers', cursive;
     font-weight: 400;
     padding: 10px;
 }
+.info-title{
+    font-size: 1rem;
+}
+
 html,body{
     height: 100%;
     font-size: 16px;
@@ -32,7 +36,7 @@ header{
     background:  #e4000f;
     width: 100%;
 }
-.title{
+.title, h2{
     color: #3B4CCA;
 }
 .search{
@@ -45,6 +49,7 @@ header{
     height: 45px;
     appearance: none;
     transition: border 0.15s ease 0s;
+    margin-top: 20px;
 }
  
 .search:focus{
@@ -58,6 +63,20 @@ nav{
     width: 100%;
     padding: 10px;
 }
+
+@media(min-width:40rem){
+    .info-title{
+        font-size: 2rem;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    nav{
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
 .pokemon-container{
     margin: 50px auto;
     flex-wrap: wrap;
@@ -78,7 +97,7 @@ nav{
     text-align: center;
     border-radius: 5px;
     width: min(170px, 200px);
-    max-height: 170px;
+    max-height: 160px;
 }
 img{
     max-width: 100%;
@@ -102,4 +121,5 @@ footer{
     justify-content: center;
     padding: 10px;
     align-items: center;
+    color: black;
 }
