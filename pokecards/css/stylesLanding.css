@@ -63,10 +63,12 @@ nav{
     flex-wrap: wrap;
     gap:10px;
     justify-content: center;
-    max-height: 100vh;
+    height: 100%;
     overflow-y: scroll;
     border-top: 5px solid #3B4CCA;
-    border-bottom:5px solid #3B4CCA; ;
+    border-bottom:5px solid #3B4CCA;
+    padding: 15px 0;
+    width: 100%;
 }
 
 .pokemon-business-card{
@@ -76,6 +78,7 @@ nav{
     text-align: center;
     border-radius: 5px;
     width: min(170px, 200px);
+    max-height: 170px;
 }
 img{
     max-width: 100%;
@@ -92,4 +95,11 @@ img{
     color: white;
     border-radius: 5px;
  
+}
+footer{
+    margin-top: auto;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
 }
