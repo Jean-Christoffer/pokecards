@@ -5,7 +5,7 @@ const container = document.querySelector('.pokemon-container')
 //fetching pokemon api data with a endpoint which contains a list with all the pokemon names and their url
 const getPokemonList = async ()=>{
         const API = new FetchWrapper('https://pokeapi.co/api/v2/')
-        const data = await API.get(`pokemon?limit=500&offset=0`)
+        const data = await API.get(`pokemon?limit=300&offset=0`)
         return data
 }
 
@@ -41,7 +41,7 @@ export default async function render(query = ''){
         <div class="img-wrapper">
             <img src="${imageUrl}">
         </div>
-        <a href="index.html" class = "info-link" id = ${pokemon.name}>Info</a>
+        <a href="index.html?id=${pokemon.name}" class = "info-link">Info</a>
         </div>`)
     });
 

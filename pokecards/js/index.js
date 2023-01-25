@@ -3,13 +3,18 @@ import FetchWrapper from "./components/fetchHelper.js"
  const variables = ['.name', '.pokemon', '.previous', '.ul-list', '.search', 'form', '.hp']
  const selected = variables.map(value => document.querySelector(value))
  const [pokeName, pokemon, randomPokemon, ulList, search,  form, hp] = selected
+
+ const queryString = document.location.search
+ const params  = new URLSearchParams(queryString)
+ const id = params.get("id")
+
  
-let sum = 150
-let pokeMonName = 'charizard'
-let someValue = 1
+let sum
+let pokeMonName = 'mewtwo'
+let result = id
 
 async function pokeDex() {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${someValue ?? '1'}`)
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${result ?? '1'}`)
     const data = await response.json()
     console.log(data.stats)
     return data      
@@ -19,18 +24,16 @@ async function pokeDex() {
 form.addEventListener('submit', (e)=>{
     e.preventDefault()
     search.value.length === 0 ? alert('Please enter a pokemon') :
-    (pokeMonName = search.value.toLowerCase().trim(), search.value = '', someValue = pokeMonName, updatePokemon())
+    (pokeMonName = search.value.toLowerCase().trim(), search.value = '', result = pokeMonName, updatePokemon())
 });
 
 randomPokemon.addEventListener('click', ()=>{
-    sum = Math.floor(Math.random() * 501)
+    result = sum
+    sum = Math.floor(Math.random() * 301)
     sum <= 0 ? sum = 1 : sum
-    someValue = sum
-    console.log(sum)
     updatePokemon()
     
 })
-
 
 function updateUI(data) {
     ulList.innerHTML = ''
