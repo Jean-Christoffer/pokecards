@@ -10,16 +10,14 @@ import FetchWrapper from "./components/fetchHelper.js"
 
  
 let sum
-let pokeMonName = 'mewtwo'
+let pokeMonName
 let result = id
 
 async function pokeDex() {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${result ?? '1'}`)
     const data = await response.json()
-    console.log(data.stats)
     return data      
 }
-
 
 form.addEventListener('submit', (e)=>{
     e.preventDefault()
@@ -31,8 +29,7 @@ randomPokemon.addEventListener('click', ()=>{
     result = sum
     sum = Math.floor(Math.random() * 301)
     sum <= 0 ? sum = 1 : sum
-    updatePokemon()
-    
+    updatePokemon()   
 })
 
 function updateUI(data) {
