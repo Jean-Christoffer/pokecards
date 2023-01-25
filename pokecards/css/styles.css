@@ -71,6 +71,12 @@ h1{
     justify-content: center;
    
 }
+@media(min-width:40rem){
+    .pokeCard{
+        margin: 80px auto;
+    }
+}
+
 
 .previous {
     background: rgb(45,91,253);
@@ -174,7 +180,7 @@ button:hover {
 }
 
 .ul-list{
-margin-left: 20px;
+    margin-left: 20px;
 }
 
 form{
@@ -184,4 +190,8 @@ footer{
     margin-top: auto;
     justify-content: center;
     padding: 10px;
+    background:#c7a008;
+    color: #3c5aa6;
+    font-weight: bold;
+    width: 100%;
 }
