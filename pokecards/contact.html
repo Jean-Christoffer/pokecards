@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <script src="js/components/validator.js" defer></script>
+    <title>Contact</title>
+</head>
+<body>
+    <header class="flex">
+        <nav class="flex">
+            <a href="landingPage.html"><h1 class="title">PokeCards</h1></a>
+        </nav>
+    </header>
+        <form class="flex contact-form" id="question-form">
+            <fieldset class="flex contact-form">
+                <legend><h2>Contact</h2></legend>
+                <div class="input-fields">
+                    <label for="name">First name</label>
+                    <input id="name"type="text" placeholder="First Name" required class="inputs">
+                    <p class="error-name error">Please enter a name</p>                    
+                </div>
+                <div class="input-fields">
+                    <label for="last-name">Last name</label>
+                    <input id="last-name"type="text" placeholder="Last Name" required class="inputs">
+                    <p class="error-last-name error">Please enter a last name</p>                      
+                </div>
+
+                <div class="input-fields">
+                    <label for="email">Email</label>
+                    <input id="email"type="Email" placeholder="Email" required class="inputs">
+                    <p class="error-email error">Please enter a valid email</p>                      
+                </div>
+
+                <div class="input-fields">
+                    <label for="subject">Subject</label>
+                    <input id="subject"type="text" placeholder="Subject" required class="inputs">
+                    <p class="error-subject error">Please enter a subject</p>                      
+                </div>
+                <div class="input-fields">
+                    <label for="text-field">Question</label>
+                    <textarea id="text-field" required rows="5"></textarea>
+                    <p class="error-text error">Please enter a question greater than 5</p> 
+                    
+                </div>
+                <div class="submit-container">
+                    <button id="form-submit" class="search-btn">Send</button>
+                </div>
+            </fieldset>
+
+        </form>
+        <div class="snack-bar">
+            Message sendt!
+        </div>
+        <footer class="flex">
+            <p>API from: https://pokeapi.co/</p>
+        </footer>
+</body>
+</html>

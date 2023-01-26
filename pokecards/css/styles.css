@@ -5,7 +5,8 @@
 
 }
 html{
-    background-image: linear-gradient( 180deg,  rgba(21,13,107,1) 1.1%, rgba(188,16,80,1) 130.5% );
+    background: rgb(204,0,0);
+background: radial-gradient(circle, rgba(204,0,0,1) 0%, rgba(59,76,202,1) 100%);
 }
 
 html,body{
@@ -26,7 +27,7 @@ img{
     border-radius: 5px;   
 }
 header{
-    background:#e4000f;
+    background:black;
     width: 100%;
 }
 
@@ -47,7 +48,7 @@ nav{
     padding: 10px;
     background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );
 }
-h1{
+h1,h2{
     font-size: 2rem;
     font-family: 'Bangers', cursive;
     font-weight: 400;
@@ -182,16 +183,82 @@ button:hover {
 .ul-list{
     margin-left: 20px;
 }
-
-form{
+.contact-form{
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+}
+.input-fields, label{
+    gap:5px;
+    margin-top: 7px;
+    display: flex;
+    flex-direction: column;
+}
+.inputs{
+    padding: 5px;
+}
+.search-wrapper{
     margin-top: 20px;
+}
+.submit-container{
+    align-self: center;
+    margin-top: 20px;
+}
+#form-submit{
+    padding: 10px 50px;
+}
+a{
+    text-decoration: none;
+    color:#3B4CCA;
 }
 footer{
     margin-top: auto;
     justify-content: center;
-    padding: 10px;
-    background:#c7a008;
-    color: #3c5aa6;
+    padding: 20px;
+    background:black;
+    color: #3B4CCA;
     font-weight: bold;
     width: 100%;
+}
+.error{
+    color: red;
+    display: none;
+}
+.snack-bar{
+    background: rgb(36, 34, 34);
+    color: white;
+    padding: 20px 50px;
+    border-radius: 5px;
+    position: fixed;
+    transform: translateY(-100%);
+    transition: 0.3s ease-in-out;
+
+}
+.snack-bar.show{
+    transform: translateY(110%);
+    -webkit-transform: translateY(110%);
+    -moz-transform: translateY(110%);
+    -ms-transform: translateY(110%);
+    -o-transform: translateY(110%);
+}
+.contact-form{
+    padding: 15px;
+    border-radius: 5px;
+   
+}
+textarea{
+    padding: 5px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+.contact-form legend{
+    text-align: center;
+    color:white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.contact-form fieldset{
+    background: #000000;
+    color: white;
+    border:#3B4CCA;
 }

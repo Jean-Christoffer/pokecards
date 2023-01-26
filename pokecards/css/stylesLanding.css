@@ -5,7 +5,8 @@
 
 }
 html{
-    background-image: linear-gradient( 180deg,  rgba(21,13,107,1) 1.1%, rgba(188,16,80,1) 130.5% );
+    background: rgb(204,0,0);
+background: radial-gradient(circle, rgba(204,0,0,1) 0%, rgba(59,76,202,1) 100%);
  
     color: white;
 }
@@ -14,6 +15,12 @@ h1{
     font-family: 'Bangers', cursive;
     font-weight: 400;
     padding: 10px;
+}
+.contact{
+    text-decoration: none;
+    color: #3B4CCA;
+    font-family: 'Bangers', cursive;
+    font-size: 1.5rem;
 }
 .info-title{
     font-size: 1rem;
@@ -33,7 +40,7 @@ body{
     flex-direction: column;
 }
 header{
-    background:  #e4000f;
+    background:black;
     width: 100%;
 }
 .title, h2{
@@ -115,11 +122,15 @@ img{
     border-radius: 5px;
  
 }
+a{
+    text-decoration: none;
+}
 footer{
     margin-top: auto;
-    width: 100%;
     justify-content: center;
-    padding: 10px;
-    align-items: center;
-    color: black;
+    padding: 20px;
+    background:black;
+    color: #3B4CCA;
+    font-weight: bold;
+    width: 100%;
 }
