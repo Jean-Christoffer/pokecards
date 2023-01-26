@@ -1,12 +1,15 @@
-    const cssSelectors = ['#name','#last-name','#email','#subject','#question-form','.error-name',
-    '.error-last-name','.error-email','.error-subject','#text-field','.error-text','.snack-bar']
-    const selected = cssSelectors.map(value => document.querySelector(value))
+    import { variables3 } from "./components/cssSelectors.js"
+    const selected = variables3.map(value => document.querySelector(value))
     const [firstName,lastName,email,subject,form,errorName,errorLastName,errorEmail,
         errorSubject,textField,errorText,snackBar] = selected
     const inputs = document.querySelectorAll('input')
 
+
+    
+    
+    let isValid = true
     function validate(){
-        isValid = true
+       
         if(firstName.value.trim().length > 0){
             errorName.style.display = 'none'
         }else{
