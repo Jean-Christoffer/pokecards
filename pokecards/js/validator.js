@@ -4,8 +4,8 @@
         errorSubject,textField,errorText,snackBar] = selected
     const inputs = document.querySelectorAll('input')
 
-
     
+
     
     let isValid = true
     function validate(){
