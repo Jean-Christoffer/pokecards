@@ -185,8 +185,10 @@ button:hover {
 }
 .contact-form{
     flex-direction: column;
+    justify-content: center;
     width: 300px;
-    margin: auto;
+    margin:20px auto;
+    background: #000000;
 }
 .input-fields, label{
     gap:5px;
@@ -201,11 +203,13 @@ button:hover {
     margin-top: 20px;
 }
 .submit-container{
-    align-self: center;
-    margin-top: 20px;
+
+    margin-top: 15px;
 }
 #form-submit{
-    padding: 10px 50px;
+    padding: 10px;
+    justify-self: center;
+    width: 100%;
 }
 a{
     text-decoration: none;
@@ -258,7 +262,7 @@ textarea{
     font-weight: bold;
 }
 .contact-form fieldset{
-    background: #000000;
     color: white;
-    border:#3B4CCA;
+    border:none;
+
 }
