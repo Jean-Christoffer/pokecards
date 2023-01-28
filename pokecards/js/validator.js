@@ -1,4 +1,5 @@
     import { variables3 } from "./components/cssSelectors.js"
+    import {showSnackBar} from "./components/helpers.js"
     const selected = variables3.map(value => document.querySelector(value))
     const [firstName,lastName,email,subject,form,errorName,errorLastName,errorEmail,
         errorSubject,textField,errorText,snackBar] = selected
@@ -43,15 +44,11 @@
         return isValid
          
     }
-    
+
     form.addEventListener('submit',(event)=>{
         event.preventDefault()
         validate()
-        isValid ? (snackBar.classList.add('show'),
-         setTimeout(()=>{
-            snackBar.classList.remove('show')
-        },4000))
-         : snackBar.classList.remove('show')
+        isValid ? showSnackBar(snackBar,'Message sendt!'): showSnackBar(snackBar,'ups! please check your input fields')
         inputs.forEach(value => {
             value.value = ''
         })

@@ -13,4 +13,13 @@ function capitalize(word){
     let restOfWord = word.substring(1)
     return firstLetter + restOfWord
 }
+
+function showSnackBar(snackBar,message){
+    snackBar.textContent = message
+    snackBar.classList.add('show')
+    setTimeout(()=>{
+        snackBar.classList.remove('show')
+    },4000)
+}
 export {capitalize}
+export {showSnackBar}
