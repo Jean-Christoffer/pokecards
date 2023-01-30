@@ -1,53 +1,50 @@
     import { variables3 } from "./components/cssSelectors.js"
     import {showSnackBar} from "./components/helpers.js"
+
     const selected = variables3.map(value => document.querySelector(value))
-    const [address, email,subject,form, errorAddress, errorEmail,
-        errorSubject,textField,errorText,snackBar] = selected
-    const inputs = document.querySelectorAll('input')
+    const [address, email,subject,form, textField,error,snackBar] = selected
+    const inputs = document.querySelectorAll('.clear-field')
 
-    
-   
-    let isValid = true
-    function validate(){
-        if(address.value.trim().length > 24){
-            errorAddress.style.display = 'none'
-        }else{
-            isValid = false
-            errorAddress.style.display = 'block'
-        }
-
-        if(email.value.trim().length > 4){
-            errorEmail.style.display = 'none'
-        }else{
-            isValid = false
-            errorEmail.style.display = 'block'
-        }
-        if(subject.value.trim().length > 9){
-            errorSubject.style.display = 'none'
-        }else{
-            isValid = false
-            errorSubject.style.display = 'block'
-        }
-        if(textField.value.trim().length > 5){
-            errorSubject.style.display = 'none'
-        }else{
-            isValid = false
-            errorText.style.display = 'block'
-        }
-        return isValid
-         
+    const errorMessage = (input, errorMessage) => {
+        const affectedInput = input.parentElement
+        const errorCurrent = affectedInput.querySelector('.error')
+        
+        errorCurrent.textContent = errorMessage
+        errorCurrent.classList.add('showError')
+        
     }
+
+    const removeErrorMessage = (input) => {
+        const affectedInput = input.parentElement
+        const errorCurrent = affectedInput.querySelector('.error')
+
+        errorCurrent.classList.remove('showError')
+        
+    }
+
+    const validateForm = () =>{
+        const addressField = address.value.trim()
+        const emailField = email.value.trim()
+        const subjectField = subject.value.trim()
+        const regEx = /\S+@\S+\.\S+/;
+        const patternMatches = regEx.test(emailField);
+
+        addressField.length >= 25 ? removeErrorMessage(address) : errorMessage(address, 'Address needs at least 25 characters')
+        patternMatches ? removeErrorMessage(email) : errorMessage(email, 'Please enter a valid email')
+        subjectField.length >= 10 ? removeErrorMessage(subject) : errorMessage(subject, 'Subject needs at least 10 characters')
+
+        //show snackbar if all the conditions above are met
+        addressField.length >= 25 && patternMatches && subjectField.length >= 10 && showSnackBar(snackBar, 'message sent!')
+             
+    }
+    
 
     form.addEventListener('submit',(event)=>{
         event.preventDefault()
-        validate()
-        isValid ? showSnackBar(snackBar,'Message sent!') : showSnackBar(snackBar,'ups! please check your input fields')
-        inputs.forEach(input => {
-            input.value = ''
-        })
+        validateForm()
+        inputs.forEach(input => input.value = '')
 
     })
-
 
 
 

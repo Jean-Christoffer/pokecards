@@ -186,7 +186,7 @@ button:hover {
 .contact-form{
     flex-direction: column;
     justify-content: center;
-    width: 300px;
+    width: 320px;
     margin:20px auto;
     background: #000000;
 }
@@ -224,10 +224,7 @@ footer{
     font-weight: bold;
     width: 100%;
 }
-.error{
-    color: red;
-    display: none;
-}
+
 .snack-bar{
     background: rgb(36, 34, 34);
     color: white;
@@ -265,4 +262,13 @@ textarea{
     color: white;
     border:none;
 
+}
+
+
+.error{
+    color: red;
+    display: none;
+}
+.error.showError{
+    display: block;
 }
