@@ -2,7 +2,7 @@
     import {showSnackBar} from "./components/helpers.js"
 
     const selected = variables3.map(value => document.querySelector(value))
-    const [address, email,subject,form, textField,error,snackBar] = selected
+    const [address, email,subject,form,snackBar] = selected
     const inputs = document.querySelectorAll('.clear-field')
 
     const errorMessage = (input, errorMessage) => {
@@ -29,6 +29,7 @@
         const regEx = /\S+@\S+\.\S+/;
         const patternMatches = regEx.test(emailField);
 
+        //validates each input field
         addressField.length >= 25 ? removeErrorMessage(address) : errorMessage(address, 'Address needs at least 25 characters')
         patternMatches ? removeErrorMessage(email) : errorMessage(email, 'Please enter a valid email')
         subjectField.length >= 10 ? removeErrorMessage(subject) : errorMessage(subject, 'Subject needs at least 10 characters')
