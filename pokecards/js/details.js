@@ -1,7 +1,5 @@
-import FetchWrapper from "./components/helpers.js";
+import {FetchWrapper, capitalize, showSnackBar} from "./components/helpers.js";
 import variables  from "./components/cssSelectors.js"; 
-import { capitalize } from "./components/helpers.js";
-import {showSnackBar} from "./components/helpers.js"
 
 const selected = variables.map(value => document.querySelector(value));
 const [pokeName, pokemonImage, randomPokemon, abilityList, search,  form, hp,snackBar] = selected;

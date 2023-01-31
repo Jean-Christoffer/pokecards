@@ -1,32 +1,15 @@
     import { variables3 } from "./components/cssSelectors.js"
-    import {showSnackBar} from "./components/helpers.js"
-
+    import {showSnackBar, errorMessage, removeErrorMessage} from "./components/helpers.js"
+    
     const selected = variables3.map(value => document.querySelector(value))
     const [address, email,subject,form,snackBar] = selected
     const inputs = document.querySelectorAll('.clear-field')
 
-    const errorMessage = (input, errorMessage) => {
-        const affectedInput = input.parentElement
-        const errorCurrent = affectedInput.querySelector('.error')
-        
-        errorCurrent.textContent = errorMessage
-        errorCurrent.classList.add('showError')
-        
-    }
-
-    const removeErrorMessage = (input) => {
-        const affectedInput = input.parentElement
-        const errorCurrent = affectedInput.querySelector('.error')
-
-        errorCurrent.classList.remove('showError')
-        
-    }
-
     const validateForm = () =>{
-        const addressField = address.value.trim()
-        const emailField = email.value.trim()
-        const subjectField = subject.value.trim()
-        const regEx = /\S+@\S+\.\S+/;
+        const addressField = address.value.toLowerCase().trim()
+        const emailField = email.value.toLowerCase().trim()
+        const subjectField = subject.value.toLowerCase().trim()
+        const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g; //https://regexr.com/3e48o
         const patternMatches = regEx.test(emailField);
 
         //validates each input field

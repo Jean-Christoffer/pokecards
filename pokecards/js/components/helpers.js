@@ -21,5 +21,23 @@ function showSnackBar(snackBar,message){
         snackBar.classList.remove('show')
     },4000)
 }
+
+const errorMessage = (input, errorMessage) => {
+    const affectedInput = input.parentElement
+    const errorCurrent = affectedInput.querySelector('.error')
+    
+    errorCurrent.textContent = errorMessage
+    errorCurrent.classList.add('showError')
+}
+
+const removeErrorMessage = (input) => {
+    const affectedInput = input.parentElement
+    const errorCurrent = affectedInput.querySelector('.error')
+
+    errorCurrent.classList.remove('showError')
+}
+
 export {capitalize}
 export {showSnackBar}
+export {errorMessage}
+export {removeErrorMessage}
