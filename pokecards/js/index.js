@@ -1,5 +1,7 @@
-import {FetchWrapper, capitalize, showSnackBar} from "./components/helpers.js";
+import FetchWrapper from "./components/helpers.js";
 import { variables2 } from "./components/cssSelectors.js";
+import { capitalize, showSnackBar } from "./components/helpers.js";
+
 
 const selected = variables2.map(value => document.querySelector(value));
 const [ search, container,snackBar] = selected;
@@ -40,6 +42,8 @@ const getPokemonImage = async (url) => {
         console.error(error)
         showSnackBar(snackBar,'currently experiencing issues with the API, try again later')
     }
+
+
 };
 
 search.addEventListener('keyup',()=>{
