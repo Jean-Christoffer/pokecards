@@ -22,7 +22,7 @@
              
     }
     
-console.log(snackBar)
+
     form.addEventListener('submit',(event)=>{
         event.preventDefault()
         validateForm()

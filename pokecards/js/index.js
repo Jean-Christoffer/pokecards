@@ -6,18 +6,21 @@ import { capitalize, showSnackBar } from "./components/helpers.js";
 const selected = variables2.map(value => document.querySelector(value));
 const [ search, container,snackBar] = selected;
 
+//fetches the api based on the fetchwrapper class, makes it easier to read
 const getPokemonList = async ()=>{
         const API = new FetchWrapper('https://pokeapi.co/api/v2/');
         const data = await API.get(`pokemon?limit=300&offset=0`);
         return data;
 };
 
+//gets pokemon image from the url inside the pokemonList
 const getPokemonImage = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
     return data.sprites.front_default;
 };
 
+//search function which renders the page based on the search input value, it filters the results in real time
  async function render(query = ''){
     try{
         const data = await getPokemonList();
