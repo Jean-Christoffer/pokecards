@@ -28,18 +28,32 @@ const getPokemonImage = async (url) => {
         const cleaner = query.trim().toLocaleLowerCase();
         const filtered = data.results.filter(pokemon => pokemon.name
         .toLocaleLowerCase().includes(cleaner));
-        container.innerHTML = '';
-    
+        container.textContent = ''
+            //avoiding innerHTML due to it being a public API where everyone can contribute
         filtered.map(async (pokemon) => {
             const imageUrl = await getPokemonImage(pokemon.url);
-            container.insertAdjacentHTML("beforeend",
-            `<div class="pokemon-business-card">
-            <h2>${capitalize(pokemon.name)}</h2>
-            <div class="img-wrapper">
-                <img src="${imageUrl}">
-            </div>
-            <a href="details.html?id=${pokemon.name}" class = "info-link">Info</a>
-            </div>`);
+
+            const divContainer = document.createElement('div')
+            divContainer.className = 'pokemon-business-card'
+
+            const pokemonTitle = document.createElement('h2')
+            pokemonTitle.textContent = `${capitalize(pokemon.name)}`
+            divContainer.appendChild(pokemonTitle)
+
+            const imgWrapper = document.createElement('div')
+            const pokemonImg = document.createElement('img')
+            pokemonImg.src = `${imageUrl}`
+            imgWrapper.appendChild(pokemonImg)
+            divContainer.appendChild(imgWrapper)
+
+            const pokemonLink = document.createElement('a')
+            pokemonLink.href = `details.html?id=${pokemon.name}`
+            pokemonLink.className = 'info-link'
+            pokemonLink.textContent = 'Info'
+            divContainer.appendChild(pokemonLink)
+
+            container.appendChild(divContainer)
+           
         });
     } catch(error){
         console.error(error)
@@ -54,5 +68,6 @@ search.addEventListener('keyup',()=>{
 });
 
 render();
+
 
 
