@@ -9,7 +9,7 @@
         const addressField = address.value.toLowerCase().trim()
         const emailField = email.value.toLowerCase().trim()
         const subjectField = subject.value.toLowerCase().trim()
-        const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g; //https://regexr.com/3e48o
+        const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g; //https://regexr.com/3e48o //I find regEx very hard to understand as i am a visual learner and regEx looks like gibberish
         const patternMatches = regEx.test(emailField);
 
         //validates each input field

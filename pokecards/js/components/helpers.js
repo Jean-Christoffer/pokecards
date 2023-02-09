@@ -1,4 +1,4 @@
-//class to make api calls easier, this trick i learned from the course at "learnjavascript" also makes it easier to add post and put requests
+//class to make api calls easier, this trick i learned from the course at "learnjavascriptonline" also makes it easier to add post and put requests
 export default class FetchWrapper {
     constructor(baseURL){
         this.baseURL = baseURL
@@ -22,6 +22,7 @@ function showSnackBar(snackBar,message){
         snackBar.classList.remove('show')
     },4000)
 }
+
 // errorMessages function can now be used for multiple forms
 const errorMessage = (input, errorMessage) => {
     const affectedInput = input.parentElement
