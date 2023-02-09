@@ -83,18 +83,17 @@ nav{
         align-items: center;
     }
 }
-
+.page-select-container{
+    gap:15px;
+    margin-bottom: 10px;
+}
 .pokemon-container{
-    margin: 50px auto;
+    margin: 0px auto;
     flex-wrap: wrap;
     gap:10px;
     justify-content: center;
-    height: 100%;
-    overflow-y: scroll;
-    border-top: 5px solid #3B4CCA;
-    border-bottom:5px solid #3B4CCA;
     padding: 15px 0;
-    width: 100%;
+    max-width: 1500px;
 }
 
 .pokemon-business-card{
@@ -133,4 +132,37 @@ footer{
     color: #3B4CCA;
     font-weight: bold;
     width: 100%;
+}
+button {
+    background: rgb(45,91,253);
+    background: linear-gradient(0deg, rgba(45,91,253,1) 51%, rgba(195,34,34,1) 51%, rgba(195,34,34,1) 100%);
+    margin: 10px;
+    padding: 30px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: black;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+
+}
+button:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: black;
+    text-decoration: none;
+  }
+  button:active{
+    transform: scale(0.94);
+    -webkit-transform: scale(0.94);
+    -moz-transform: scale(0.94);
+    -ms-transform: scale(0.94);
+    -o-transform: scale(0.94);
 }

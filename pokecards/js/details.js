@@ -32,7 +32,7 @@ form.addEventListener('submit', (event)=>{
     event.preventDefault();
 
     search.value.length === 0 ? showSnackBar(snackBar,'Pokemon not found') :
-    (pokemonName = search.value.toLowerCase().trim(),
+    (pokemonName = search.value.toLowerCase().trim().replaceAll(' ', ''),
     search.value = '',
     result = pokemonName,
     updatePokemon());

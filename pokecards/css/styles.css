@@ -107,8 +107,11 @@ button:hover {
     text-decoration: none;
   }
   button:active{
-    transform: scale(0.94)  ;
-
+    transform: scale(0.94);
+    -webkit-transform: scale(0.94);
+    -moz-transform: scale(0.94);
+    -ms-transform: scale(0.94);
+    -o-transform: scale(0.94);
 }
  .abilites-wrapper{
     padding: 10px;
