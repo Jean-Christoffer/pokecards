@@ -82,6 +82,11 @@ nav{
         justify-content: space-around;
         align-items: center;
     }
+    button:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: black;
+        text-decoration: none;
+      }
 }
 .page-select-container{
     gap:15px;
@@ -154,15 +159,7 @@ button {
     color: white;
 
 }
-button:hover {
-    background-position: right center; /* change the direction of the change here */
-    color: black;
-    text-decoration: none;
-  }
+
   button:active{
     transform: scale(0.94);
-    -webkit-transform: scale(0.94);
-    -moz-transform: scale(0.94);
-    -ms-transform: scale(0.94);
-    -o-transform: scale(0.94);
 }
