@@ -5,6 +5,16 @@ import { capitalize,showSnackBar } from "./components/helpers.js";
 const selected = variables.map(value => document.querySelector(value));
 const [pokeName, pokemonImage, randomPokemon, abilityList, search,  form, hp,snackBar] = selected;
 
+const loader = document.querySelector('.loader')
+window.addEventListener('load',()=>{
+    loader.classList.add('hidden-loader')
+    loader.addEventListener('transitionend',()=>{
+        loader.remove()
+    })
+})
+
+
+
 const queryString = document.location.search;
 const params  = new URLSearchParams(queryString);
 const id = params.get("id");

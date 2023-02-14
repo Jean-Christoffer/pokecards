@@ -5,11 +5,20 @@
     const [address, email,subject,form,snackBar] = selected
     const inputs = document.querySelectorAll('.clear-field')
 
+
+    const loader = document.querySelector('.loader')
+    window.addEventListener('load',()=>{
+        loader.classList.add('hidden-loader')
+        loader.addEventListener('transitionend',()=>{
+            loader.remove()
+        })
+    })
+
     const validateForm = () =>{
         const addressField = address.value.toLowerCase().trim()
         const emailField = email.value.toLowerCase().trim()
         const subjectField = subject.value.toLowerCase().trim()
-        const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g; //https://regexr.com/3e48o //I find regEx very hard to understand as i am a visual learner and regEx looks like gibberish
+        const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g; //https://regexr.com/3e48o
         const patternMatches = regEx.test(emailField);
 
         //validates each input field
