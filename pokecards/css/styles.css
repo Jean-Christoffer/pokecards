@@ -28,10 +28,6 @@ img{
     border-radius: 5px;   
 }
 
-
-
-
-
 .loader {
     position: fixed;
     top:0;
@@ -66,18 +62,6 @@ img{
     transform:rotate(1turn);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 header{
     background:black;
