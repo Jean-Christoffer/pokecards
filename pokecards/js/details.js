@@ -13,8 +13,6 @@ window.addEventListener('load',()=>{
     })
 })
 
-
-
 const queryString = document.location.search;
 const params  = new URLSearchParams(queryString);
 const id = params.get("id");
@@ -23,7 +21,7 @@ let sum = 2;
 let pokemonName;
 let result = id;
 
-const pokeDex = async ()=>{
+const getPokemon = async ()=>{
     const API = new FetchWrapper(`https://pokeapi.co/api/v2`);
     const data = await API.get(`/pokemon/${result ?? '1'}`);
     return data;
@@ -34,7 +32,7 @@ randomPokemon.addEventListener('click', ()=>{
     sum = Math.floor(Math.random() * 301);
     sum <= 0 ? sum = 1 : sum;
     result = sum;
-    updatePokemon();
+    render();
 
 });
 
@@ -45,12 +43,12 @@ form.addEventListener('submit', (event)=>{
     (pokemonName = search.value.toLowerCase().trim().replaceAll(' ', ''),
     search.value = '',
     result = pokemonName,
-    updatePokemon());
+    render());
 
 });
 
-function updateUI(data) {
-    abilityList.innerHTML = '';
+function renderPokemon(data) {
+    abilityList.textContent = '';
 
     pokemonImage.src = data.sprites.other.dream_world.front_default;
     pokeName.textContent = data.name; 
@@ -65,17 +63,17 @@ function updateUI(data) {
     });
 }
 
-async function updatePokemon(){
+async function render(){
     try {
-        const data = await pokeDex();
-        updateUI(data); 
+        const data = await getPokemon();
+        renderPokemon(data); 
     } catch (error) {
         console.error(error);
         showSnackBar(snackBar,'currently experiencing issues with the API, try again later')
     };
 };
 
-updatePokemon();
+render();
 
 
 

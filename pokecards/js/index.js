@@ -40,11 +40,7 @@ const getPokemonImage = async (url) => {
 let currentPage = 1
 
 //render page function that puts everything together using try catch since this is the last step
- async function render(query = ''){
-    
-    try{
-        const data = await getPokemonList(currentPage);
-        loading()
+  function renderPokemon(query, data, imageFunction){
         //search function thats filters the displayed list based on user input
         const cleaner = query.trim().toLocaleLowerCase().replaceAll(' ', '');
         const filtered = data.results.filter(pokemon => pokemon.name
@@ -53,7 +49,7 @@ let currentPage = 1
         container.textContent = ''
         //using createElement instead of innerHTML due to it being a public API where everyone can contribute
         filtered.map(async (pokemon) => {
-            const imageUrl = await getPokemonImage(pokemon.url);
+            const imageUrl =  await imageFunction(pokemon.url);
 
             const divContainer = document.createElement('div')
             divContainer.className = 'pokemon-business-card'
@@ -79,13 +75,21 @@ let currentPage = 1
             container.appendChild(divContainer)
            
         });
+    }
+
+async function render(query = ''){
+    try {
+        const data = await getPokemonList(currentPage);
+        renderPokemon(query, data, getPokemonImage);
+        loading() 
     } catch(error){
         console.error(error)
         showSnackBar(snackBar,'currently experiencing issues with the API, try again later')
     }
-
-
 };
+
+
+
 /*
 Increases or decreases the currentPage variable which gets passed as a parameter to the offset in the api call
 this allows you to flip trough the next page of items. instead of having 1000 pokemon on the page i have a max of 32 and the offset allows me to
@@ -111,7 +115,7 @@ search.addEventListener('keyup',()=>{
 
 });
 
-render();
+render()
 
 
 
