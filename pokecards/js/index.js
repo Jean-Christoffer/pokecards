@@ -88,13 +88,12 @@ async function render(query = ''){
     }
 };
 
-
-
 /*
 Increases or decreases the currentPage variable which gets passed as a parameter to the offset in the api call
 this allows you to flip trough the next page of items. instead of having 1000 pokemon on the page i have a max of 32 and the offset allows me to
 go to the next page of 32 pokemons out of the forexample 1000 pokemons in the api result. 
  */
+
 nextPage.addEventListener('click',() => {
     currentPage ++
     addLoader()
