@@ -40,7 +40,7 @@ const getPokemonImage = async (url) => {
 let currentPage = 1
 
 //render page function that puts everything together using try catch since this is the last step
-  function renderPokemon(query, data, imageFunction){
+   function renderPokemon(query, data, imageFunction){
         //search function thats filters the displayed list based on user input
         const cleaner = query.trim().toLocaleLowerCase().replaceAll(' ', '');
         const filtered = data.results.filter(pokemon => pokemon.name
