@@ -26,7 +26,11 @@
         subjectField.length >= 10 ? removeErrorMessage(subject) : errorMessage(subject, 'Subject needs at least 10 characters')
 
         //show snackbar if all the conditions above are met
-        addressField.length >= 25 && patternMatches && subjectField.length >= 10 && showSnackBar(snackBar, 'message sent!')
+        if(addressField.length >= 25 && patternMatches && subjectField.length >= 10){
+            showSnackBar(snackBar, 'message sent!')
+        }else{
+            return;
+        }
         
              
     }
