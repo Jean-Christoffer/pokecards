@@ -19,7 +19,7 @@ function addLoader(){
 }
 
 
-let totalAmountOfItems = 32
+let totalAmountOfItems = 50
 
 // in my opinion this saves a lot of space when it comes to querySelector
 const selected = variables2.map(value => document.querySelector(value));
