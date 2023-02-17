@@ -1,2 +1,3 @@
 # JavaScript 1 Course Assignment
-## Link to deployed site: https://shimmering-torte-caa9fb.netlify.app/index.html
+## Goal is to make two calls to an API, first is to fetch an array of results. Second is to fetch a single result using an id, name, or other property
+### Link to deployed site: https://shimmering-torte-caa9fb.netlify.app/index.html
