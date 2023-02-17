@@ -137,7 +137,18 @@ h1,h2{
     color: white;
 
 }
-
+.previous.button-disabled{
+    opacity: 0.4;
+   cursor: default;
+}
+.previous.button-disabled:active{
+    transform: none;
+}
+.previous.button-disabled:hover{
+    background-position:none;
+    color: white;
+    text-decoration: none;
+}
 button:hover {
     background-position: right center; /* change the direction of the change here */
     color: black;
@@ -145,10 +156,7 @@ button:hover {
   }
   button:active{
     transform: scale(0.94);
-    -webkit-transform: scale(0.94);
-    -moz-transform: scale(0.94);
-    -ms-transform: scale(0.94);
-    -o-transform: scale(0.94);
+
 }
  .abilites-wrapper{
     padding: 10px;

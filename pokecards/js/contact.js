@@ -5,7 +5,6 @@
     const [address, email,subject,form,snackBar] = selected
     const inputs = document.querySelectorAll('.clear-field')
 
-
     const loader = document.querySelector('.loader')
     window.addEventListener('load',()=>{
         loader.classList.add('hidden-loader')
@@ -28,10 +27,10 @@
 
         //show snackbar if all the conditions above are met
         addressField.length >= 25 && patternMatches && subjectField.length >= 10 && showSnackBar(snackBar, 'message sent!')
+        
              
     }
     
-
     form.addEventListener('submit',(event)=>{
         event.preventDefault()
         validateForm()

@@ -10,13 +10,15 @@ window.addEventListener('load',()=>{
 
 function loading(){
     loader.classList.add('hidden-loader')
-    loader.addEventListener('transitionend',()=>{
+    loader.addEventListener('transitionend',(event)=>{
        
     })
 }
 function addLoader(){
     loader.classList.remove('hidden-loader')
 }
+
+
 let totalAmountOfItems = 32
 
 // in my opinion this saves a lot of space when it comes to querySelector
@@ -81,7 +83,9 @@ async function render(query = ''){
     try {
         const data = await getPokemonList(currentPage);
         renderPokemon(query, data, getPokemonImage);
-        loading() 
+        loading()
+        buttonDisabled()
+
     } catch(error){
         console.error(error)
         showSnackBar(snackBar,'currently experiencing issues with the API, try again later')
@@ -101,12 +105,24 @@ nextPage.addEventListener('click',() => {
 
 })
 
+function buttonDisabled(){
+    if(currentPage === 1){
+        previousPage.disabled = true
+        previousPage.classList.add('button-disabled')
+    }else{
+        previousPage.disabled = false
+        previousPage.classList.remove('button-disabled')
+    }
+}
+
 previousPage.addEventListener('click',()=>{
     currentPage --
     addLoader()
     render()
-   
+
 })
+
+
 
 //fires up the render function on keyup with the users search input as parameter
 search.addEventListener('keyup',()=>{
