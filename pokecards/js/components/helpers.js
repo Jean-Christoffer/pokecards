@@ -18,9 +18,11 @@ function capitalize(word){
 function showSnackBar(snackBar,message){
     snackBar.textContent = message
     snackBar.classList.add('show')
-    setTimeout(()=>{
+     setTimeout(()=>{
         snackBar.classList.remove('show')
+        
     },4000)
+
 }
 
 // errorMessages function can now be used for multiple forms
