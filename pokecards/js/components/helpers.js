@@ -16,12 +16,14 @@ function capitalize(word){
 }
 //snackBar to show choosen messages
 function showSnackBar(snackBar,message){
+
     snackBar.textContent = message
     snackBar.classList.add('show')
-     setTimeout(()=>{
+     const timer = setTimeout(()=>{
         snackBar.classList.remove('show')
         
     },4000)
+   
 
 }
 
