@@ -57,7 +57,8 @@ function renderPokemon(data) {
     abilityList.textContent = '';
 
     pokemonImage.src = data.sprites.other.dream_world.front_default;
-    pokeName.textContent = data.name; 
+    pokeName.textContent = data.name;
+    document.title = data.name; 
     hp.textContent = `HP: ${data.stats.filter(stat => stat.stat.name.includes('hp'))
     .map(stat => stat.base_stat)}`;
 
