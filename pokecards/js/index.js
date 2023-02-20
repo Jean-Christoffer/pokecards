@@ -4,15 +4,10 @@ import { capitalize, showSnackBar } from "./components/helpers.js";
 
 const loader = document.querySelector('.loader')
 
-window.addEventListener('load',()=>{
-    loading()
-})
+window.addEventListener('load',loading)
 
 function loading(){
     loader.classList.add('hidden-loader')
-    loader.addEventListener('transitionend',(event)=>{
-       
-    })
 }
 function addLoader(){
     loader.classList.remove('hidden-loader')
