@@ -30,38 +30,26 @@ img{
 
 .loader {
     position: fixed;
-    top:0;
-    left:0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #061161;
-    transition:opacity 0.75s, visibility 0.75s;
+    width: 210px;
+    height: 210px;
+    border: 15px solid rgb(204,0,0);
+    border-radius: 50%;
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    margin: auto;
+    transition: 1s ease-in-out;
 }
-  .loader.hidden-loader{
+.loader.hidden-loader{
     opacity: 0;
     visibility: hidden;
   }
-  .loader::after{
-    content: '';
-    width: 75px;
-    height: 75px;
-    border: 15px solid rgb(204,0,0);
-    border-radius: 50%;
-    animation:loading 0.75s ease infinite;
-    
-}
-@keyframes loading{
-    from{
-        transform: rotate(0turn);
 
-    }
-    to{
-    transform:rotate(1turn);
-    }
-}
 
 header{
     background:black;

@@ -68,9 +68,9 @@ function renderPokemon(data) {
 
 async function render(){
     try {
+        loading()
         const data = await getPokemon();
         renderPokemon(data);
-        loading()
     } catch (error) {
         console.error(error);
         showSnackBar(snackBar,'currently experiencing issues with the API, try again later')
