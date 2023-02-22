@@ -6,15 +6,13 @@ const selected = variables.map(value => document.querySelector(value));
 const [pokeName, pokemonImage, randomPokemon, abilityList, search,  form, hp,snackBar] = selected;
 
 const loader = document.querySelector('.loader')
-
-window.addEventListener('load',loading)
-
 function loading(){
-    loader.classList.add('hidden-loader')
-}
-function addLoader(){
     loader.classList.remove('hidden-loader')
 }
+function loadingComplete(){
+    loader.classList.add('hidden-loader')
+}
+
 
 
 const queryString = document.location.search;
@@ -36,7 +34,6 @@ randomPokemon.addEventListener('click', ()=>{
     sum = Math.floor(Math.random() * 301);
     sum <= 0 ? sum = 1 : sum;
     result = sum;
-    addLoader();
     render();
 
 });
@@ -48,7 +45,6 @@ form.addEventListener('submit', (event)=>{
     (pokemonName = search.value.toLowerCase().trim().replaceAll(' ', ''),
     search.value = '',
     result = pokemonName,
-    loading(),
     render());
 
 });
@@ -74,11 +70,13 @@ async function render(){
     try {
         const data = await getPokemon();
         renderPokemon(data);
-        loading()  
+        loading()
     } catch (error) {
         console.error(error);
         showSnackBar(snackBar,'currently experiencing issues with the API, try again later')
-    };
+    } finally{
+        loadingComplete()
+    }
 };
 
 render();

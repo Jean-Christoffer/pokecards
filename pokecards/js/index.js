@@ -3,15 +3,13 @@ import { variables2 } from "./components/cssSelectors.js";
 import { capitalize, showSnackBar } from "./components/helpers.js";
 
 const loader = document.querySelector('.loader')
-
-window.addEventListener('load',loading)
-
 function loading(){
-    loader.classList.add('hidden-loader')
-}
-function addLoader(){
     loader.classList.remove('hidden-loader')
 }
+function loadingComplete(){
+    loader.classList.add('hidden-loader')
+}
+
 
 
 let totalAmountOfItems = 50
@@ -84,6 +82,8 @@ async function render(query = ''){
     } catch(error){
         console.error(error)
         showSnackBar(snackBar,'currently experiencing issues with the API, try again later')
+    } finally{
+        loadingComplete()
     }
 };
 
@@ -95,7 +95,6 @@ go to the next page of 32 pokemons out of the forexample 1000 pokemons in the ap
 
 nextPage.addEventListener('click',() => {
     currentPage ++
-    addLoader()
     render()
 
 })
@@ -112,7 +111,6 @@ function buttonDisabled(){
 
 previousPage.addEventListener('click',()=>{
     currentPage --
-    addLoader()
     render()
 
 })

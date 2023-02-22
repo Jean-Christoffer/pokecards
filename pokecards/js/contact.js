@@ -8,9 +8,6 @@
     const loader = document.querySelector('.loader')
     window.addEventListener('load',()=>{
         loader.classList.add('hidden-loader')
-        loader.addEventListener('transitionend',()=>{
-            loader.remove()
-        })
     })
 
     const validateForm = () =>{
