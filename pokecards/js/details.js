@@ -13,8 +13,6 @@ function loadingComplete(){
     loader.classList.add('hidden-loader')
 }
 
-
-
 const queryString = document.location.search;
 const params  = new URLSearchParams(queryString);
 const id = params.get("id");
