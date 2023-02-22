@@ -44,6 +44,7 @@ let currentPage = 1
         container.textContent = ''
         //using createElement instead of innerHTML due to it being a public API where everyone can contribute
         filtered.map(async (pokemon) => {
+
             const imageUrl =  await imageFunction(pokemon.url);
 
             const divContainer = document.createElement('div')
@@ -75,8 +76,8 @@ let currentPage = 1
 async function render(query = ''){
     try {
         const data = await getPokemonList(currentPage);
-        renderPokemon(query, data, getPokemonImage);
         loading()
+        renderPokemon(query, data, getPokemonImage);   
         buttonDisabled()
 
     } catch(error){
