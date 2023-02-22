@@ -76,7 +76,6 @@ let currentPage = 1
 async function render(query = ''){
     try {
         const data = await getPokemonList(currentPage);
-        loading()
         renderPokemon(query, data, getPokemonImage);   
         buttonDisabled()
 
@@ -95,6 +94,7 @@ go to the next page of 32 pokemons out of the forexample 1000 pokemons in the ap
  */
 
 nextPage.addEventListener('click',() => {
+    loading()
     currentPage ++
     render()
 
@@ -111,6 +111,7 @@ function buttonDisabled(){
 }
 
 previousPage.addEventListener('click',()=>{
+    loading()
     currentPage --
     render()
 
