@@ -1,4 +1,4 @@
-import FetchWrapper from "./components/helpers.js";
+import FetchHelper from "./components/helpers.js";
 import { selectorsIndexPage } from "./components/cssSelectors.js";
 import { capitalize, showSnackBar } from "./components/helpers.js";
 
@@ -10,8 +10,6 @@ function loadingComplete(){
     loader.classList.add('hidden-loader')
 }
 
-
-
 let totalAmountOfItems = 50
 
 // in my opinion this saves a lot of space when it comes to querySelector
@@ -20,7 +18,7 @@ const [ search, container,snackBar,nextPage, previousPage] = selected;
 
 //fetches the api based on the fetchwrapper class, makes it easier to read
 const getPokemonList = async (page)=>{
-        const API = new FetchWrapper('https://pokeapi.co/api/v2/');
+        const API = new FetchHelper('https://pokeapi.co/api/v2/');
         const data = await API.get(`pokemon?limit=${totalAmountOfItems}&offset=${(page - 1) * totalAmountOfItems}`);
         return data;
 };

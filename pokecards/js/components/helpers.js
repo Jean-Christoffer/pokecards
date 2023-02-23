@@ -1,5 +1,5 @@
 //class to make api calls easier, this trick i learned from the course at "learnjavascriptonline" also makes it easier to add post and put requests
-export default class FetchWrapper {
+export default class FetchHelper {
     constructor(baseURL){
         this.baseURL = baseURL
     }

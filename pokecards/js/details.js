@@ -1,4 +1,4 @@
-import FetchWrapper from "./components/helpers.js";
+import FetchHelper from "./components/helpers.js";
 import selectorsDetailsPage  from "./components/cssSelectors.js"; 
 import {capitalize,showSnackBar } from "./components/helpers.js";
 
@@ -24,7 +24,7 @@ let result = id;
 
 //fetches pokemon based on query string from index page, pokemonName from search form or random result from sum variable
 const getPokemon = async ()=>{
-    const API = new FetchWrapper(`https://pokeapi.co/api/v2`);
+    const API = new FetchHelper(`https://pokeapi.co/api/v2`);
     const data = await API.get(`/pokemon/${result ?? '1'}`);
     return data;
 };
