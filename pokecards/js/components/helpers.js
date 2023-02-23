@@ -8,18 +8,20 @@ export default class FetchWrapper {
         return response.json()
     }
 }
+
 //makes the first letter capitalized
 function capitalize(word){
     let firstLetter = word.charAt(0).toUpperCase()
     let restOfWord = word.substring(1)
     return firstLetter + restOfWord
 }
-//snackBar to show choosen messages
+
+//snackBar to show  messages 
 function showSnackBar(snackBar,message){
 
     snackBar.textContent = message
     snackBar.classList.add('show')
-     const timer = setTimeout(()=>{
+     setTimeout(()=>{
         snackBar.classList.remove('show')
         
     },4000)

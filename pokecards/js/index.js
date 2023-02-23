@@ -1,5 +1,5 @@
 import FetchWrapper from "./components/helpers.js";
-import { variables2 } from "./components/cssSelectors.js";
+import { selectorsIndexPage } from "./components/cssSelectors.js";
 import { capitalize, showSnackBar } from "./components/helpers.js";
 
 const loader = document.querySelector('.loader')
@@ -15,7 +15,7 @@ function loadingComplete(){
 let totalAmountOfItems = 50
 
 // in my opinion this saves a lot of space when it comes to querySelector
-const selected = variables2.map(value => document.querySelector(value));
+const selected = selectorsIndexPage.map(value => document.querySelector(value));
 const [ search, container,snackBar,nextPage, previousPage] = selected;
 
 //fetches the api based on the fetchwrapper class, makes it easier to read

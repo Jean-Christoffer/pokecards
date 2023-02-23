@@ -1,7 +1,7 @@
-    import { variables3 } from "./components/cssSelectors.js"
+    import { selectorsContact } from "./components/cssSelectors.js"
     import {showSnackBar, errorMessage, removeErrorMessage} from "./components/helpers.js"
     
-    const selected = variables3.map(value => document.querySelector(value))
+    const selected = selectorsContact.map(value => document.querySelector(value))
     const [address, email,subject,form,snackBar] = selected
     const inputs = document.querySelectorAll('.clear-field')
 
@@ -14,7 +14,7 @@
         const addressField = address.value.toLowerCase().trim()
         const emailField = email.value.toLowerCase().trim()
         const subjectField = subject.value.toLowerCase().trim()
-        const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g; //https://regexr.com/3e48o
+        const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g; //https://regexr.com/3e48o still much to learn when it comes to regex
         const patternMatches = regEx.test(emailField);
 
         //validates each input field
