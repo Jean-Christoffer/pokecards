@@ -24,7 +24,7 @@
 
         //show snackbar if all the conditions above are met
         if(addressField.length >= 25 && patternMatches && subjectField.length >= 10){
-            showSnackBar(snackBar, 'message sent!')
+            showSnackBar(snackBar, 'Message sent!')
         }else{
             return;
         }
