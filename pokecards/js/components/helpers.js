@@ -45,7 +45,4 @@ const removeErrorMessage = (input) => {
     errorCurrent.classList.remove('showError')
 }
 
-export {capitalize}
-export {showSnackBar}
-export {errorMessage}
-export {removeErrorMessage}
+export {capitalize, showSnackBar, errorMessage, removeErrorMessage}

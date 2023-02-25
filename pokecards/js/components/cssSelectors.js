@@ -4,5 +4,4 @@
  const selectorsContact = ['#address','#email','#subject','#question-form','.snack-bar']
 
  export default selectorsDetailsPage
- export {selectorsIndexPage}
- export{selectorsContact}
+ export{selectorsContact, selectorsIndexPage}
