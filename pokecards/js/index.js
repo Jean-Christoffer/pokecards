@@ -12,18 +12,18 @@ function loadingComplete(){
 
 let totalAmountOfItems = 50
 
-// in my opinion this saves a lot of space when it comes to querySelector
+
 const selected = selectorsIndexPage.map(value => document.querySelector(value));
 const [ search, container,snackBar,nextPage, previousPage] = selected;
 
-//fetches the api based on the fetchwrapper class, makes it easier to read
+
 const getPokemonList = async (page)=>{
         const API = new FetchHelper('https://pokeapi.co/api/v2/');
         const data = await API.get(`pokemon?limit=${totalAmountOfItems}&offset=${(page - 1) * totalAmountOfItems}`);
         return data;
 };
 
-//gets pokemon image from the url inside the array fetched from the pokemonList
+
 const getPokemonImage = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
@@ -32,15 +32,15 @@ const getPokemonImage = async (url) => {
 
 let currentPage = 1
 
-//render page function that puts everything together
+
    function renderPokemon(query, data, imageFunction){
-        //search function thats filters the displayed list based on user input
+
         const cleaner = query.trim().toLocaleLowerCase().replaceAll(' ', '');
         const filtered = data.results.filter(pokemon => pokemon.name
         .toLocaleLowerCase().includes(cleaner));
             
         container.textContent = ''
-        //using createElement instead of innerHTML due to it being a public API where everyone can contribute
+
         filtered.map(async (pokemon) => {
 
             const imageUrl =  await imageFunction(pokemon.url);
@@ -86,11 +86,7 @@ async function render(query = ''){
     }
 };
 
-/*
-Increases or decreases the currentPage variable which gets passed as a parameter to the offset in the api call
-this allows you to flip trough the next page of items. instead of having 1000 pokemon on the page i have a max of 32 and the offset allows me to
-go to the next page of 32 pokemons out of the forexample 1000 pokemons in the api result. 
- */
+
 
 nextPage.addEventListener('click',() => {
     currentPage ++
@@ -116,7 +112,7 @@ previousPage.addEventListener('click',()=>{
 
 
 
-//fires up the render function on keyup with the users search input as parameter
+
 search.addEventListener('keyup',()=>{
     render(search.value);
 

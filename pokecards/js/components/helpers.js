@@ -1,4 +1,4 @@
-//class to make api calls easier, this trick i learned from the course at "learnjavascriptonline" also makes it easier to add post and put requests
+
 export default class FetchHelper {
     constructor(baseURL){
         this.baseURL = baseURL
@@ -9,14 +9,14 @@ export default class FetchHelper {
     }
 }
 
-//makes the first letter capitalized
+
 function capitalize(word){
     let firstLetter = word.charAt(0).toUpperCase()
     let restOfWord = word.substring(1)
     return firstLetter + restOfWord
 }
 
-//snackBar to show  messages 
+
 function showSnackBar(snackBar,message){
 
     snackBar.textContent = message
@@ -29,7 +29,7 @@ function showSnackBar(snackBar,message){
 
 }
 
-// errorMessages function can now be used for multiple forms
+
 const errorMessage = (input, errorMessage) => {
     const affectedInput = input.parentElement
     const errorCurrent = affectedInput.querySelector('.error')
