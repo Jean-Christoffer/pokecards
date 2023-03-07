@@ -17,12 +17,11 @@
         const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g; 
         const patternMatches = regEx.test(emailField);
 
-        //validates each input field
+
         addressField.length >= 25 ? removeErrorMessage(address) : errorMessage(address, 'Address needs at least 25 characters')
         patternMatches ? removeErrorMessage(email) : errorMessage(email, 'Please enter a valid email')
         subjectField.length >= 10 ? removeErrorMessage(subject) : errorMessage(subject, 'Subject needs at least 10 characters')
 
-        //show snackbar if all the conditions above are met
         if(addressField.length >= 25 && patternMatches && subjectField.length >= 10){
             showSnackBar(snackBar, 'Message sent!')
         }else{
